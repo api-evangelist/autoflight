@@ -1,23 +1,77 @@
 aid: autoflight
+
 name: Autoflight
-description: 'Autoflight is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Autoflight builds the future of mass individual aerial transport, offering high‑reliability, all‑weather capable drone solutions
+  for personal and commercial flight. The company focuses on innovative aviation technology, safety, and sustainability, aiming to democratize
+  air mobility for everyday users and businesses alike.
+
 url: https://raw.githubusercontent.com/api-evangelist/autoflight/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
-- Company
-apis: []
+- eVTOL
+- Air Taxi
+- Advanced Air Mobility
+- Aviation
+- Transportation
+- Certification
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: SecurityTxt
+  url: well-known/autoflight-clarity-security.txt
+- type: WellKnown
+  url: well-known/autoflight-well-known.yml
+- type: Security
+  url: https://clarity.com/vdp
+- type: Hosts
+  url: hosts/autoflight-hosts.yml
+- type: PrivacyPolicy
+  url: https://www.autoflight.com/en/privacy-policy/
+- type: Newsroom
+  url: https://www.autoflight.com/en/news/
+- type: VulnerabilityDisclosure
+  url: security/autoflight-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/autoflight-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/autoflight-stock
+  url: https://www.autoflight.com/en/
+
+apis:
+- name: Autoflight API
+  description: AutoFlight provides aerial transport services via its drone platform.
+  humanURL: https://www.autoflight.com/en/
+  aid: autoflight:autoflight-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The Autoflight website renders content via JavaScript, preventing automated extraction of API specifications.
+  evidence:
+  - url: https://www.autoflight.com/en/
+    status: 200
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 6
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
